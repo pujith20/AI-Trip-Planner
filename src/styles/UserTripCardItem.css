@@ -1,0 +1,62 @@
+.trip-card {
+  flex: 0 0 200px; /* Each card takes up minimum 300px and grows to fit */
+  max-width: 340px; /* Maximum width for the card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: black;
+}
+
+.trip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.trip-text{
+  text-decoration: none;
+}
+
+.trip-image-con {
+  width: 100%;
+  overflow: hidden; /* Ensures that the image doesn’t overflow the container */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+}
+
+.trip-image {
+  width: 100%; /* Full width to fit the card */
+  height: 100%; /* Fixed height to control the size */
+  object-fit: cover; /* Ensures the image fills the container without distortion */
+  border-top-left-radius: 12px; /* Optional, if you want rounded corners */
+  border-top-right-radius: 12px; /* Optional, for matching rounded corners */
+}
+
+.trip-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.trip-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.trip-content p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .trip-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablet */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .trip-card {
+    flex: 1 1 100%; /* 1 card per row on mobile */
+  }
+}

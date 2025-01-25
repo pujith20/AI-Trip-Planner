@@ -1,0 +1,11 @@
+.app-con{
+  background: linear-gradient(135deg, #3498db, #2ecc71);
+  min-height: 100vh;
+  min-width: 100%;
+  padding-bottom: 50px;
+}
+/* In Header.css or App.css */
+.night-mode {
+  background-color: #2e2e2e;
+  color: white;
+}

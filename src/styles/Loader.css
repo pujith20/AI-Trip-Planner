@@ -1,0 +1,57 @@
+/* Loader Overlay to cover the full page with opacity */
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Make sure it's on top */
+}
+
+/* Loader Styling */
+.loader {
+  width: 80px;
+  height: 80px;
+  border: 5px dashed transparent;
+  border-top: 5px dashed #ffecb3; /* Light yellow gradient border */
+  border-right: 5px dashed #ffd700; /* Darker yellow */
+  border-radius: 50%;
+  animation: rotateLoader 1s linear infinite, speedVariation 8s ease infinite;
+}
+
+/* Animation for rotating */
+@keyframes rotateLoader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for varying speed */
+@keyframes speedVariation {
+  0% {
+    animation-timing-function: linear;
+  }
+  25% {
+    animation-timing-function: linear;
+    animation-duration: 2s; /* Slow */
+  }
+  50% {
+    animation-timing-function: linear;
+    animation-duration: 1s; /* Fast */
+  }
+  75% {
+    animation-timing-function: linear;
+    animation-duration: 2s; /* Slow */
+  }
+  100% {
+    animation-timing-function: linear;
+    animation-duration: 1s; /* Fast */
+  }
+}

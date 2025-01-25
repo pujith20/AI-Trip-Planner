@@ -1,0 +1,169 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Home Page Background */
+.home-bg-con {
+  height: 90vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flexbox container for hero text and image */
+.hero-main-con {
+  display: flex;
+  justify-content: space-between; /* Space between text and image */
+  align-items: center;
+  gap: 40px; /* Gap between text and image */
+  max-width: 1500px; /* Max width to control container size */
+  width: 90%; /* Responsive width to fit different screen sizes */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Hero Text Section */
+.hero-con {
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: 50px;
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* Static Text (Adjacent Text) */
+.static-text {
+  margin-left: 10px; /* Gap between changing and static text */
+}
+
+/* Smooth transition for changing text */
+.hero-changing-text {
+  font-weight: bold;
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Animation for the text fading out */
+.hero-changing-text.hidden {
+  opacity: 0;
+  transform: translateY(-20px); /* Moves text up while fading out */
+  animation: leaveUp 0.5s forwards;
+}
+
+/* Animation for the text coming in */
+.hero-changing-text.visible {
+  opacity: 0;
+  transform: translateY(20px); /* Start from below */
+  animation: slideUpIn 0.5s forwards;
+}
+
+/* Keyframe for the entering text */
+@keyframes slideUpIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframe for the leaving text */
+@keyframes leaveUp {
+  to {
+    opacity: 0;
+    transform: translateY(-20px); /* Text slides up and fades out */
+  }
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Hero Image */
+.hero-img {
+  width: 50%; /* Adjust image size */
+  max-width: 800px; /* Set max width for larger screens */
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-main-con {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .hero-img {
+    width: 80%; /* Make image smaller on mobile */
+    margin-top: 20px;
+  }
+
+  .hero-con {
+    flex: none; /* Let the text section adjust in width */
+  }
+  
+}
+
+/* Responsive Design for widths below 470px */
+@media (max-width: 470px) {
+  /* Adjust the hero section for smaller screens */
+  .hero-main-con {
+    flex-direction: column; /* Stack text and image vertically */
+    text-align: center; /* Center the text */
+    gap: 20px; /* Reduce the gap between text and image */
+  }
+
+  .hero-title {
+    font-size: 32px; /* Reduce the font size for the title */
+    margin-left: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px; /* Adjust subtitle font size for readability */
+  }
+
+  .hero-btn {
+    font-size: 14px; /* Make the button text smaller */
+    padding: 12px 24px; /* Adjust padding for the button */
+  }
+
+  .hero-img {
+    width: 100%; /* Make the image take full width of the screen */
+    max-width: none; /* Remove max-width limitation */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 15px; /* Add margin above the image */
+    border-radius: 10px; /* Adjust border-radius for smaller screens */
+  }
+
+  /* Reduce the margin and padding for the background container */
+  .home-bg-con {
+    padding: 10px;
+  }
+}

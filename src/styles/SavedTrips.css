@@ -1,0 +1,19 @@
+.saved-trips-container {
+  height: 90vh;
+  margin: 0px auto; /* Center the container */
+  padding: 20px;
+  overflow: scroll;
+}
+
+.saved-trips-container h2 {
+  color: white;
+  margin: 20px 20px;
+}
+
+.trip-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}

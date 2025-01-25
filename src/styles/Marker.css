@@ -1,0 +1,233 @@
+.marker-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: top 0.3s, left 0.3s;
+}
+
+
+
+.marker.completed {
+  background-color: green;
+}
+
+.marker-icon {
+  font-size: 24px;
+  color: black;
+}
+
+.marker-label {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  margin-top: 40px; /* Add space between label and marker */
+}
+
+/* Media Query for devices with width less than 768px */
+@media screen and (max-width: 768px) {
+  .marker {
+    position: sticky;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: -25%;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .marker-label {
+    margin-top: 5px; /* Space between label and marker */
+  }
+  .popup-card {
+    bottom: auto; /* Adjust positioning for mobile devices */
+    top: -70%; /* Align the card with the top of the marker */
+    left: 120%; /* Move the card to the right of the marker */
+    width: 200px; /* Adjust width for smaller screens */
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+  }
+  .popup-card input {
+    padding: 8px 10px;
+    margin-top: 25px;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+  }
+  .popup-card button {
+    padding: 7.5px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 38%;
+    height: 20%;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .marker {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: -15%;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .popup-card {
+    position: absolute;
+    bottom: 120px; /* Adjust for positioning above the marker */
+    left: -10px;
+    width: 220px;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+  }
+  .popup-card input {
+    padding: 8px;
+    margin-top: 10px;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+  }
+  .popup-card button {
+    padding: 8px 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 38%;
+  }
+}
+
+.popup-slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  background-color: white;
+  max-height: 100px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.suggestions-list li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+/* General Select Styling for larger screens */
+.popup-card select {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: white;
+  font-size: 15px;
+  color: #333;
+  appearance: none; /* Removes default browser arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='black' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.popup-card select:focus {
+  border-color: #4caf50; /* Add focus color */
+}
+
+.popup-card option {
+  padding: 8px;
+}
+
+/* Styling select dropdown arrow for mobile */
+@media screen and (max-width: 768px) {
+  .popup-card select {
+    background-image: none; /* Disable arrow on mobile */
+    font-size: 14px;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+  }
+}
+
+/* Hover effect for select field */
+.popup-card select:hover {
+  border-color: #4caf50;
+  cursor: pointer;
+}
+
+/* Styling for the dropdown menu when selecting options */
+.popup-card select:active,
+.popup-card select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Select option hover effect */
+.popup-card option:hover {
+  background-color: #e6f7e6; /* Light green background */
+}
+
+/* Add custom shadow to the select element */
+.popup-card select {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Change the font color for selected option */
+.popup-card select:valid {
+  color: #333;
+}

@@ -1,0 +1,204 @@
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.map-container p {
+  color: white; /* Set text color to white */
+  text-align: center; /* Center the text horizontally */
+  font-size: 16px; /* Adjust the font size if needed */
+  margin-top: 10px; /* Optional: adjust spacing */
+}
+
+.map-background {
+  background-image: url("../assets/ForestBg.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.progress-container {
+  position: absolute;
+  top: 53%;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background-color: #ddd;
+  transform: translateY(-50%);
+}
+
+.progress-line {
+  height: 100%;
+  background-color: green;
+  transition: width 0.5s ease;
+}
+
+.blur-background {
+  filter: blur(8px);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@media screen and (min-width:768px) {
+  .confirmation-popup {
+    position: fixed;
+    top: 35%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .popup-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .popup-content p {
+    margin-bottom: 8px;
+  }
+  
+  .popup-content button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .popup-content button:hover {
+    background-color: #2980b9;
+  }
+}
+
+
+/* Media Query for devices with width less than 768px */
+@media screen and (max-width: 768px) {
+  /* Make the progress container and path vertical */
+  .progress-container {
+    top: 53%;
+    left: 10%;
+    width: 4px; /* Make the progress line vertical */
+    height: 90%;
+  }
+
+  .progress-line {
+    width: 100%; /* Height changes dynamically with progress */
+    height: auto;
+    transition: height 0.5s ease; /* Change height instead of width */
+  }
+
+  /* Adjust popup position for the vertical layout */
+  .popup-card {
+    left: 60px; /* Shift popup to the side */
+    bottom: auto; /* No need to adjust the bottom */
+    top: 15%; /* Set the position at the top of the screen */
+  }
+  
+  .confirmation-popup {
+    position: fixed;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .popup-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .popup-content p {
+    margin-bottom: 8px;
+  }
+  
+  .popup-content button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .popup-content button:hover {
+    background-color: #2980b9;
+  }
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Popup slide-in animation */
+.popup-card {
+  position: absolute;
+  bottom: 180px;
+  width: 200px;
+  padding: 15px !important;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  z-index: 3;
+  opacity: 0; /* Initially invisible */
+  transform: translateY(20px); /* Start from slightly lower */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.popup-slide-in {
+  opacity: 1; /* Become visible */
+  transform: translateY(0); /* Move to position */
+}
+
+.popup-card h3 {
+  margin-bottom: 10px;
+}
+
+.popup-card input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+.popup-card button {
+  width: 100px !important;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.map-paths {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+line {
+  stroke: white;
+  stroke-width: 5; /* Increase the line thickness */
+}
+
+.active-path {
+  stroke: white;
+  stroke-width: 7; /* Increase thickness for active path */
+  transition: stroke 0.3s ease;
+}

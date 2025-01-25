@@ -1,0 +1,81 @@
+/* Form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 20px;
+  }
+  
+  /* Form styles */
+  .contact-form {
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Form title */
+  .form-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Form group for label and input alignment */
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form labels */
+  .form-label {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+  }
+  
+  /* Input fields */
+  .form-input, .form-textarea {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus, .form-textarea:focus {
+    border-color: #6e45e2;
+  }
+  
+  /* Textarea for comments */
+  .form-textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    height: auto;
+    min-height: 100px;
+  }
+  
+  /* Submit button */
+  .form-submit-btn {
+    padding: 12px;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #6e45e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-submit-btn:hover {
+    background-color: #88d3ce;
+  }
+  

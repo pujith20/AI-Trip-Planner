@@ -1,0 +1,266 @@
+.nav-bg-con {
+  height: 10vh;
+  width: 100%;
+  color: white;
+  padding-left: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+}
+
+.logo-con {
+  align-self: center;
+  margin-top: 18px;
+}
+
+.logo-con a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link-con {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 150px;
+  margin: 0;
+  padding-left: 25%;
+  
+}
+
+.nav-item {
+  padding: 5px 15px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Remove blue color and underline for the links */
+.box {
+  text-decoration: none;
+  color: inherit; /* Or any color you want for the links */
+  z-index: 2;
+}
+
+.nav-link-con-2 {
+  display: flex;
+  list-style: none;
+  align-self: center;
+  gap: 50px;
+  padding-right: 2%;
+  margin: 0;
+  white-space: nowrap;
+  
+}
+
+/* Responsive styles for mobile view */
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  margin-right: 30px;
+  margin-top: 13px;
+}
+
+/* Hide links in desktop view */
+@media screen and (max-width: 768px) {
+  .nav-bg-con{
+    height: 10vh;
+  }
+  .nav-link-con {
+    display: none;
+  }
+
+  /* Show menu icon in mobile view */
+  .menu-icon {
+    display: block;
+  }
+
+  .logo-con {
+    max-height: 60px;
+    max-width: 100px;
+    align-self: center;
+    padding-left: 25px;
+    margin-top: 33px;
+  }
+
+  /* Adjust nav-link-con-2 for mobile */
+  .nav-link-con-2 {
+    justify-content: center;
+  }
+  .saved-trips {
+    display: none !important; /* Hide Saved Trips from the navbar */
+  }
+
+  .auth-dropdown-container {
+    display: inline-block;
+    width: 80px; /* Adjust width of sign-in/profile section */
+    margin-top: 5%;
+  }
+
+  .nav-bg-con {
+    padding-left: 10px;
+    padding-right: 10px; /* Add some space on the sides */
+  }
+}
+
+
+
+/* Sidebar for mobile view */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 2;
+  margin: 10px 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background-color: blue;
+}
+
+.auth-dropdown-container {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  max-width: 150px; /* Adjust max-width for sign-in */
+  transition: width 0.3s ease-in-out; /* Smooth transition for width changes */
+}
+
+/* Expand the width when user is signed in */
+.auth-dropdown-container.signed-in {
+  max-width: 250px; /* Increase the width to accommodate email display */
+}
+
+.auth-dropdown {
+  display: block;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.auth-dropdown button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #f1f1f1;
+  text-align: left;
+  cursor: pointer;
+}
+
+.auth-dropdown button:hover {
+  background-color: #ddd;
+}
+
+.signin-link, .profile-icon,.saved-trips {
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.saved-trips{
+  text-decoration: none;
+  color: inherit; /* Or any color you want for the links */
+  display: block;
+}
+
+.auth-dropdown-container:hover .auth-dropdown {
+  display: block;
+}
+
+li {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 470px){
+  .auth-dropdown-container{
+    display: none !important;
+  }
+  
+  .nav-link-con-2 {
+    gap: 15px;
+    padding-right: 10%;
+  }
+
+  .nav-link-con {
+    gap: 80px; /* Adjust gap for mobile */
+  }
+
+  .nav-item {
+    font-size: 14px; /* Reduce font size for small screens */
+    padding: 5px;
+  }
+
+  .auth-dropdown-container {
+    max-width: 100px;
+    margin-top: 3%;
+  }
+
+  .menu-icon {
+    font-size: 20px;
+  }
+
+  .sidebar {
+    width: 0; /* Ensure the sidebar is not shown */
+  }
+
+  /* Adjust the login and profile dropdown */
+  .auth-dropdown {
+    min-width: 140px;
+  }
+
+  .auth-dropdown button {
+    font-size: 14px; /* Reduce the font size of the button */
+  }
+
+  .nav-bg-con {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .nav-link-con {
+    gap: 60px;
+  }
+
+  .sidebar ul li {
+    padding: 8px 15px; /* Adjust padding for sidebar items */
+    color: white;
+    text-decoration: none;
+  }
+}
+

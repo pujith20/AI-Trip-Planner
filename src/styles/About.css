@@ -1,0 +1,248 @@
+/* About.css */
+
+.about-container {
+  font-family: "Arial", sans-serif;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* Personal Introduction */
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.intro-text {
+  max-width: 60%;
+}
+
+.intro-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.intro-text .highlight {
+  color: #007bff;
+}
+
+/* Style for the Resume Button */
+.resume-button {
+  text-decoration: none; /* Remove underline from link */
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.intro-image .profile-pic {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Projects Section */
+.projects-section {
+  margin-bottom: 60px;
+  text-align: left;
+  color: white;
+}
+
+.projects-section {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  color: white;
+  margin-top: 25px;
+}
+
+.project-card {
+  padding: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #0056b3;
+}
+
+/* Experience Section */
+.experience-section {
+  margin-bottom: 60px;
+  color: white;
+}
+
+.experience-timeline .timeline-item {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.timeline-item h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.timeline-item .timeline-date {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.timeline-item p {
+  font-size: 1.1rem;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-bottom: 60px;
+  color: white;
+}
+
+.skills-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.skill-card {
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 1rem;
+}
+
+/* Call to Action Section */
+.cta-section {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 60px;
+  border-radius: 10px;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #ff9900;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ff6600;
+}
+
+/* Responsive Design for small screens */
+@media (max-width: 500px) {
+  .intro-section {
+    flex-direction: column; /* Stack profile and text vertically */
+    text-align: center;
+  }
+
+  .intro-text {
+    max-width: 100%;
+    margin-top: 20px; /* Add some spacing between the image and the text */
+    margin-bottom: 30px;
+  }
+
+  .intro-image .profile-pic {
+    width: 200px; /* Reduce image size for small screens */
+    height: 200px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .project-card {
+    margin-bottom: 20px; /* Add some space between project cards */
+  }
+
+  .skills-list {
+    flex-direction: column; /* Stack skill cards vertically */
+    align-items: center; /* Center align skill cards */
+  }
+
+  .skill-card {
+    margin-bottom: 20px; /* Add spacing between skill cards */
+  }
+}
