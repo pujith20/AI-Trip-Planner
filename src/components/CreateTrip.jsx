@@ -13,6 +13,7 @@ const CreateTrip = () => {
   const [startingLocation, setStartingLocation] = useState("");
   const [isLocationEntered, setIsLocationEntered] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false); // State to show confirmation popup
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768); // Track screen size
   const [loading, setLoading] = useState(false); // State for loading effect
   const navigate = useNavigate(); // Navigation hook
   const AI_Prompt =
@@ -147,6 +148,15 @@ const CreateTrip = () => {
     if (!startingLocation) {
       handleLocationSubmit();
     }
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [startingLocation]); // Add startingLocation as a dependency
 
   // Calculate progress based on the current step
@@ -160,7 +170,9 @@ const CreateTrip = () => {
         <div className="progress-container">
           <div
             className="progress-line"
-            style={{ width: `${progressPercentage}%` }}
+            style={{
+              [isSmallScreen ? "height" : "width"]: `${progressPercentage}%`, // Apply conditionally based on screen size
+            }}
           />
         </div>
 
