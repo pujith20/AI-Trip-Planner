@@ -2,7 +2,11 @@
   height: 90vh;
   margin: 0px auto; /* Center the container */
   padding: 20px;
-  overflow: scroll;
+  overflow-x: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .saved-trips-container h2 {
