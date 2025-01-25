@@ -141,8 +141,9 @@ body {
   }
 
   .hero-title {
-    font-size: 32px; /* Reduce the font size for the title */
+    font-size: 23px; /* Reduce the font size for the title */
     margin-left: 20px;
+
   }
 
   .hero-subtitle {
